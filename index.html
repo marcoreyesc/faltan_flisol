@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Publicar en la App Store con Fastlane</title>
+	<meta charset="utf-8">
+	<meta http-equiv="x-ua-compatible" content="ie=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="shower/themes/ribbon/styles/screen-16x10.css">
+</head>
+<body class="shower list">
+
+	<header class="caption">
+		<h1>Publicar en la App Store con Fastlane</h1>
+		<p>Marco Antonio Reyes Castro, en Makingdevs.</p>
+	</header>
+
+	<section class="slide" id="cover">
+		<h2>Publicar en la App Store con Fastlane</h2>
+		<blockquote>
+			<p>En mi infancia, un objeto parecía resumir los remedios para el hombre en apuros: la navaja suiza. "¿Hay vida en la Tierra?" (2012), Juan Villoro</p>
+		<blockquote>
+		<figure>
+			<img class="cover" src="pictures/knife.jpg" alt="swiss knife">
+			<figcaption class="white">
+				<a href="http://makingdevs.com/">© Marco Antonio Reyes Castro</a>
+			</figcaption>
+		</figure>
+		<style>
+			#cover h2 {
+				margin:30px 0 0;
+				color:#FFF;
+				text-align:center;
+				font-size:70px;
+				}
+			#cover p {
+				margin:10px 0 0;
+				text-align:center;
+				color:#FFF;
+				font-style:italic;
+				font-size:20px;
+				}
+				#cover p a {
+					color:#FFF;
+					}
+		</style>
+	</section>
+
+	<section class="slide">
+		<h2>¿Que puedo hacer con Fastlane?</h2>
+		<ol>
+			<li>Ejecutar pruebas unitarias</li>
+			<li>Captura automática de pantallas</li>
+			<li>Distribución de aplicaciones a TestFlight</li>
+			<li>Publicar una aplicación en la AppStore</li>
+			<li>Y mucho pero mucho más!!</li>
+		</ol>
+		<p class="note"><a href="https://docs.fastlane.tools/actions/#push">https://docs.fastlane.tools/actions/#push</a></p>
+	</section>
+
+	<section class="slide">
+		<h2>Cómo empezar</h2>
+		<p>$ sudo gem install fastlane -NV </p> 
+		<p>$ fastlane init</p>
+	</section>
+
+	<section class="slide">
+		<script src="https://asciinema.org/a/f1qWti2TB83qzlgdHWB1wlh0N.js" id="asciicast-f1qWti2TB83qzlgdHWB1wlh0N" data-size="small" async></script>
+	</section>
+
+	<section class="slide">
+		<h2>Aprovisionamiento</h2>
+		<p>Preferimos gastar el tiempo construyendo cosas, en vez de pelearnos con el aprovisionamento</p>
+		<p><strong>sigh</strong> nombre corto para la acción get_provisioning_profile</p> 
+		<p>$ fastlane sigh</p>
+	</section>
+
+	<section class="slide">
+		<script src="https://asciinema.org/a/f1qWti2TB83qzlgdHWB1wlh0N.js" id="asciicast-f1qWti2TB83qzlgdHWB1wlh0N" data-size="small" async></script>
+	</section>
+
+	<section class="slide">
+		<p>Gestión de certificados</p>
+		<p><strong>cert</strong> nombre corto para la acción get_certificates</p> 
+		<p>$ fastlane cert</p>
+	</section>
+
+	<section class="slide">
+		<script src="https://asciinema.org/a/f1qWti2TB83qzlgdHWB1wlh0N.js" id="asciicast-f1qWti2TB83qzlgdHWB1wlh0N" data-size="small" async></script>
+	</section>
+
+	<section class="slide">
+		<h2>Trabajando en equipo</h2>
+		<p><strong>match</strong> Sincroniza tus certificados y perfiles con todo tu equipo</p>
+		<p>$ fastlane match</p>
+	</section>
+
+	<section class="slide">
+		<script src="https://asciinema.org/a/f1qWti2TB83qzlgdHWB1wlh0N.js" id="asciicast-f1qWti2TB83qzlgdHWB1wlh0N" data-size="small" async></script>
+	</section>
+
+	<section class="slide">
+		<h2>Empaquetar una aplicación</h2>
+		<p><strong>gym</strong>nombre corto para la acción build_ios_app</p> 
+		<p>$ fastlane gym --workspace "Example.xcworkspace" --scheme "AppName" --clean</p>
+	</section>
+
+	<section class="slide">
+		<script src="https://asciinema.org/a/f1qWti2TB83qzlgdHWB1wlh0N.js" id="asciicast-f1qWti2TB83qzlgdHWB1wlh0N" data-size="small" async></script>
+	</section>
+
+	<section class="slide">
+		<h2>Enviar una aplicación a pruebas</h2>
+		<p><strong>deliver</strong>Para iOS y Android es la manera mas facil de automatizar despligues de un app de pruebas y de liberarla</p> 
+		<p>$ fastlane deliver init</p>
+		<p>$ fastlane deliver</p>
+	</section>
+
+	<section class="slide">
+		<h2>Todo en un solo lugar</h2>
+		<p>vim ./fastlane/Fastfile</p> 
+	</section>
+
+	<section class="slide">
+		<h2>¿Qué más puedes hacer?</h2>
+		<p>Mandar a revisión tu app</p>
+		<p>Integración continua</p>
+		<p>Solucionar casi cualquier requerimiento que se presenta en la App Store</p> 
+		<p>Contribuir <a href=https://github.com/fastlane/fastlane/issues> https://github.com/fastlane/fastlane/issues</a> </p> 
+	</section>
+
+	<section class="slide">
+		<h2>Conclusión</h2>
+		<p>Es un conjunto de herramientas esenciales en desarrollo iOS y Android</p>
+		<p>Posee un gran comunidad activa</p> 
+	</section>
+
+	<section class="slide">
+		<h2>Bye bye</h2>
+		<p>Conjunto de herramientas esenciales para desarrollo de iOS y Android</p>
+		<p>Posee una gran comida de contribuyendo</p> 
+	</section>
+
+	<div class="progress"></div>
+
+	<script src="shower/shower.min.js"></script>
+	<!-- Copyright © 2017 Yours Truly, Famous Inc. -->
+
+</body>
+</html>
