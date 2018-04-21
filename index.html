@@ -54,13 +54,13 @@
 			<li>Publicar una aplicación en la AppStore</li>
 			<li>Y mucho pero mucho más!!</li>
 		</ol>
-		<p class="note"><a href="https://docs.fastlane.tools/actions/#push">https://docs.fastlane.tools/actions/#push</a></p>
 	</section>
 
 	<section class="slide">
 		<h2>Cómo empezar</h2>
 		<p>$ sudo gem install fastlane -NV </p> 
-		<p>$ fastlane init</p>
+		<p>Ubicate en la raíz de tu proyecto de Xcode<br>
+		$ fastlane init</p>
 	</section>
 
 	<section class="slide">
@@ -68,34 +68,45 @@
 	</section>
 
 	<section class="slide">
-		<h2>Aprovisionamiento</h2>
-		<p>Preferimos gastar el tiempo construyendo cosas, en vez de pelearnos con el aprovisionamento</p>
-		<p><strong>sigh</strong> Nombre corto para la acción get_provisioning_profile</p> 
-		<p>$ fastlane sigh</p>
+		<script src="https://asciinema.org/a/Xw0PLGDeSapGCNhZcGUxehN7F.js" id="asciicast-Xw0PLGDeSapGCNhZcGUxehN7F" data-size="medium" async></script>
 	</section>
 
 	<section class="slide">
-		<script src="https://asciinema.org/a/f1qWti2TB83qzlgdHWB1wlh0N.js" id="asciicast-f1qWti2TB83qzlgdHWB1wlh0N" data-size="small" async></script>
+		<h2>Aprovisionamiento</h2>
+		<p>Preferimos gastar el tiempo construyendo cosas, en vez de pelearnos con el aprovisionamento</p>
+		<p><strong>sigh</strong> Nombre corto para la acción get_provisioning_profile</p> 
+		<p>Crea repara y descarga los profiles</p>
+		<p>$ fastlane sigh</p>
+		<p>$fastlane get_provisioning_profile -a com.makingdevs.app -u antonio</p>
+	</section>
+
+	<section class="slide">
+		<script src="https://asciinema.org/a/SRIeZCXkR6rKTcMmKX8CngkZk.js" id="asciicast-SRIeZCXkR6rKTcMmKX8CngkZk" data-size="medium" async></script>
 	</section>
 
 	<section class="slide">
 		<p>Gestión de certificados</p>
 		<p><strong>cert</strong> Nombre corto para la acción get_certificates</p> 
-		<p>$ fastlane cert</p>
+		<p>Utiliza los certificados validos de tu equipo, si no, hace todo por tí</p> 
+		<p>$ fastlane action cert</p>
+		<p>$ fastlane get_certificates</p>
+		<p>fastlane cert -u cert@makingdevs.com</p>
 	</section>
 
 	<section class="slide">
-		<script src="https://asciinema.org/a/f1qWti2TB83qzlgdHWB1wlh0N.js" id="asciicast-f1qWti2TB83qzlgdHWB1wlh0N" data-size="small" async></script>
+		<script src="https://asciinema.org/a/cPXFH6W596bz9Q4mYspyArOv8.js" id="asciicast-cPXFH6W596bz9Q4mYspyArOv8" data-size="medium" async></script>
 	</section>
 
 	<section class="slide">
 		<h2>Trabajando en equipo</h2>
 		<p><strong>match</strong> Sincroniza tus certificados y perfiles con todo tu equipo</p>
-		<p>$ fastlane match</p>
+		<p> $fastlane match init</p>
+		<p> $vim Matchfile (editalo)</p>
+		<p> $fastlane match</p>
 	</section>
 
 	<section class="slide">
-		<script src="https://asciinema.org/a/f1qWti2TB83qzlgdHWB1wlh0N.js" id="asciicast-f1qWti2TB83qzlgdHWB1wlh0N" data-size="small" async></script>
+		<script src="https://asciinema.org/a/h9QF3uj6hacJ0yMEwG5toBDiz.js" id="asciicast-h9QF3uj6hacJ0yMEwG5toBDiz" data-size="medium" async></script>
 	</section>
 
 	<section class="slide">
@@ -105,23 +116,38 @@
 	</section>
 
 	<section class="slide">
-		<script src="https://asciinema.org/a/f1qWti2TB83qzlgdHWB1wlh0N.js" id="asciicast-f1qWti2TB83qzlgdHWB1wlh0N" data-size="small" async></script>
+		<script src="https://asciinema.org/a/wv2NynZW1QtHsJlKIgMJwwjyq.js" id="asciicast-wv2NynZW1QtHsJlKIgMJwwjyq" data-size="small" async></script>
 	</section>
 
 	<section class="slide">
 		<h2>Enviar una aplicación a pruebas</h2>
-		<p><strong>deliver</strong>Para iOS y Android es la manera mas facil de automatizar despligues de un app de pruebas y de liberarla</p> 
+		<p><strong>deliver</strong> Es la manera mas facil de automatizar despligues de un app de pruebas y de liberarla</p> 
 		<p>$ fastlane deliver init</p>
+		<p>$ vim deliver</p>
 		<p>$ fastlane deliver</p>
 	</section>
 
 	<section class="slide">
-		<h2>Todo en un solo lugar</h2>
-		<p>vim ./fastlane/Fastfile</p> 
+		<script src="https://asciinema.org/a/1iYFRDto3vrC3qN5AyjutbRdj.js" id="asciicast-1iYFRDto3vrC3qN5AyjutbRdj" data-size="medium" async></script>
 	</section>
 
 	<section class="slide">
+		<h2>Todo en un solo lugar</h2>
+		<p>vim ./fastlane/Fastfile</p>
+		<p>Genera tu propio flujo de trabajo creando lanes</p>
+	</section>
+
+	<section class="slide">
+		<script src="https://asciinema.org/a/d9sNJEdz3gEAFOiEUpMFCS8NG.js" id="asciicast-d9sNJEdz3gEAFOiEUpMFCS8NG" data-size="medium" async></script>
+	</section>	
+
+	<section class="slide">
+		<script src="https://asciinema.org/a/J5zDsSFcu8OyGlKTzFFbEJP1u.js" id="asciicast-J5zDsSFcu8OyGlKTzFFbEJP1u" data-size="medium" async></script>
+	</section>	
+
+	<section class="slide">
 		<h2>¿Qué más puedes hacer?</h2>
+		<p class="note"><a href="https://docs.fastlane.tools/actions/#push">https://docs.fastlane.tools/actions/#push</a></p>
 		<p>Mandar a revisión tu app</p>
 		<p>Integración continua</p>
 		<p>Solucionar casi cualquier requerimiento que se presenta en la App Store</p> 
@@ -130,14 +156,14 @@
 
 	<section class="slide">
 		<h2>Conclusión</h2>
-		<p>Es un conjunto de herramientas esenciales en desarrollo iOS y Android</p>
-		<p>Posee un gran comunidad activa</p> 
+		<p>Fastlane es un conjunto de herramientas esenciales en desarrollo iOS y Android</p>
+		<p>Posee una gran comunidad activa</p> 
 	</section>
 
 	<section class="slide">
 		<h2>Bye bye</h2>
-		<p>Conjunto de herramientas esenciales para desarrollo de iOS y Android</p>
-		<p>Posee una gran comida de contribuyendo</p> 
+		<h2>antonio@makingdevs.com</h2>
+		<h2>sin twitter sorry :( pero sigan a @CarloGilmar</h2>
 	</section>
 
 	<div class="progress"></div>
